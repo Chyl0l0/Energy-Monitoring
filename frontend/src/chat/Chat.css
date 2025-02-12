@@ -1,0 +1,36 @@
+.chat-container {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+}
+.chat-input{
+    width: 90%;
+}
+
+.chat-history {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+.chat-message {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.sender {
+    justify-content: flex-end;
+}
+
+.receiver {
+    justify-content: flex-start;
+}
+
+.chat-message-content {
+    background: #f1f0f0;
+    padding: 8px;
+    border-radius: 8px;
+    max-width: 80%;
+}

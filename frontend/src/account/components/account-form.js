@@ -1,0 +1,678 @@
+import React from 'react';
+import validate from "./validators/account-validators";
+import Button from "react-bootstrap/Button";
+import * as API_USERS from "../api/account-api";
+import APIResponseErrorMessage from "../../commons/errorhandling/api-response-error-message";
+import {Col, Row} from "reactstrap";
+import { FormGroup, Input, Label} from 'reactstrap';
+
+
+
+class AccountForm extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.toggleForm = this.toggleForm.bind(this);
+        this.reloadHandler = this.props.reloadHandler;
+
+        this.state = {
+
+            errorStatus: 0,
+            error: null,
+
+            formIsValid: false,
+
+            formControls: {
+                name: {
+                    value: '',
+                    placeholder: 'Name...',
+                    valid: false,
+                    touched: false,
+                    validationRules: {
+                        minLength: 3,
+                        isRequired: true
+                    }
+                },
+                role: {
+                    value: '',
+                    placeholder: 'Role...',
+                    valid: false,
+                    touched: false,
+                    validationRules: {
+                        minLength: 3,
+                        isRequired: true,
+                        roleValidator: true
+                    }
+                },
+                username: {
+                    value: '',
+                    placeholder: 'User...',
+                    valid: false,
+                    touched: false,
+                    validationRules: {
+                        minLength: 3,
+                        isRequired: true
+                    }
+                },
+                password: {
+                    value: '',
+                    placeholder: 'Password...',
+                    valid: false,
+                    touched: false,
+                    validationRules: {
+                        minLength: 3,
+                        isRequired: true
+                    }
+                },
+            }
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    toggleForm() {
+        this.setState({collapseForm: !this.state.collapseForm});
+    }
+
+
+    handleChange = event => {
+
+        const name = event.target.name;
+        const value = event.target.value;
+
+        const updatedControls = this.state.formControls;
+
+        const updatedFormElement = updatedControls[name];
+
+        updatedFormElement.value = value;
+        updatedFormElement.touched = true;
+        updatedFormElement.valid = validate(value, updatedFormElement.validationRules);
+        updatedControls[name] = updatedFormElement;
+
+        let formIsValid = true;
+        for (let updatedFormElementName in updatedControls) {
+            formIsValid = updatedControls[updatedFormElementName].valid && formIsValid;
+        }
+
+        this.setState({
+            formControls: updatedControls,
+            formIsValid: formIsValid
+        });
+
+    };
+
+    registerAccount(account) {
+        return API_USERS.postAccount(account, (result, status, error) => {
+            if (result !== null && (status === 200 || status === 201)) {
+                console.log("Successfully inserted account with id: " + result);
+                this.reloadHandler();
+            } else {
+                this.setState(({
+                    errorStatus: status,
+                    error: error
+                }));
+            }
+        });
+    }
+
+    handleSubmit() {
+        let account = {
+            name: this.state.formControls.name.value,
+            role: this.state.formControls.role.value,
+            username: this.state.formControls.username.value,
+            password: this.state.formControls.password.value
+        };
+
+        console.log(account);
+        this.registerAccount(account);
+    }
+
+    render() {
+        return (
+            <div>
+
+                <FormGroup id='name'>
+                    <Label for='nameField'> Name: </Label>
+                    <Input name='name' id='nameField' placeholder={this.state.formControls.name.placeholder}
+                           onChange={this.handleChange}
+                           defaultValue={this.state.formControls.name.value}
+                           touched={this.state.formControls.name.touched? 1 : 0}
+                           valid={this.state.formControls.name.valid}
+                           required
+                    />
+                    {this.state.formControls.name.touched && !this.state.formControls.name.valid &&
+                    <div className={"error-message row"}> * Name must have at least 3 characters </div>}
+                </FormGroup>
+                <FormGroup id='role'>
+                    <Label for='roleField'> Role: </Label>
+                    <Input name='role' id='roleField' placeholder={this.state.formControls.role.placeholder}
+                           onChange={this.handleChange}
+                           defaultValue={this.state.formControls.role.value}
+                           touched={this.state.formControls.role.touched? 1 : 0}
+                           valid={this.state.formControls.role.valid}
+                           type='select'
+                           required>
+                        <option>user</option>
+                        <option>admin</option>
+                    </Input>
+                </FormGroup>
+                <FormGroup id='username'>
+                    <Label for='usernameField'> Username: </Label>
+                    <Input name='username' id='usernameField' placeholder={this.state.formControls.username.placeholder}
+                           onChange={this.handleChange}
+                           defaultValue={this.state.formControls.username.value}
+                           touched={this.state.formControls.username.touched? 1 : 0}
+                           valid={this.state.formControls.username.valid}
+                           required
+                    />
+                    {this.state.formControls.username.touched && !this.state.formControls.username.valid &&
+                    <div className={"error-message"}> * Email must have a valid format</div>}
+                </FormGroup>
+                
+                <FormGroup id='password'>
+                    <Label for='passwordField'> Password: </Label>
+                    <Input name='password' id='passwordField' placeholder={this.state.formControls.password.placeholder}
+                           type={"password"}
+                           onChange={this.handleChange}
+                           defaultValue={this.state.formControls.password.value}
+                           touched={this.state.formControls.password.touched? 1 : 0}
+                           valid={this.state.formControls.password.valid}
+                           required
+                    />
+                </FormGroup>
+
+                    <Row>
+                        <Col sm={{size: '4', offset: 8}}>
+                            <Button type={"submit"} disabled={!this.state.formIsValid} onClick={this.handleSubmit}>  Submit </Button>
+                        </Col>
+                    </Row>
+
+                {
+                    this.state.errorStatus > 0 &&
+                    <APIResponseErrorMessage errorStatus={this.state.errorStatus} error={this.state.error}/>
+                }
+            </div>
+        ) ;
+    }
+}
+
+
+class AccountUpdateForm extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.toggleForm = this.toggleForm.bind(this);
+        this.reloadHandler = this.props.reloadHandler;
+
+        this.state = {
+
+            errorStatus: 0,
+            error: null,
+
+            formIsValid: false,
+
+            formControls: {
+                id: {
+                    value: '',
+                    placeholder: 'Id...',
+                    valid: false,
+                    touched: false,
+                    validationRules: {
+                        minLength: 3,
+                        isRequired: true
+                    }
+                },
+                name: {
+                    value: '',
+                    placeholder: 'Name...',
+                    valid: false,
+                    touched: false,
+                    validationRules: {
+                        minLength: 3,
+                        isRequired: true
+                    }
+                },
+                role: {
+                    value: '',
+                    placeholder: 'Role...',
+                    valid: false,
+                    touched: false,
+                    validationRules: {
+                        minLength: 3,
+                        isRequired: true,
+                        roleValidator: true
+                    }
+                },
+                username: {
+                    value: '',
+                    placeholder: 'User...',
+                    valid: false,
+                    touched: false,
+                    validationRules: {
+                        minLength: 3,
+                        isRequired: true
+                    }
+                },
+                password: {
+                    value: '',
+                    placeholder: 'Password...',
+                    valid: false,
+                    touched: false,
+                    validationRules: {
+                        minLength: 3,
+                        isRequired: true
+                    }
+                },
+            }
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    toggleForm() {
+        this.setState({collapseForm: !this.state.collapseForm});
+    }
+
+
+    handleChange = event => {
+
+        const name = event.target.name;
+        const value = event.target.value;
+
+        const updatedControls = this.state.formControls;
+
+        const updatedFormElement = updatedControls[name];
+
+        updatedFormElement.value = value;
+        updatedFormElement.touched = true;
+        updatedFormElement.valid = validate(value, updatedFormElement.validationRules);
+        updatedControls[name] = updatedFormElement;
+
+        let formIsValid = true;
+        for (let updatedFormElementName in updatedControls) {
+            formIsValid = updatedControls[updatedFormElementName].valid && formIsValid;
+        }
+
+        this.setState({
+            formControls: updatedControls,
+            formIsValid: formIsValid
+        });
+
+    };
+
+    updateAccount(account) {
+        return API_USERS.updateAccount(account, (result, status, error) => {
+            if (result !== null && (status === 200 || status === 201)) {
+                console.log("Successfully inserted account with id: " + result);
+                this.reloadHandler();
+            } else {
+                this.setState(({
+                    errorStatus: status,
+                    error: error
+                }));
+            }
+        });
+    }
+
+    handleSubmit() {
+        let account = {
+            id: this.state.formControls.id.value,
+            name: this.state.formControls.name.value,
+            role: this.state.formControls.role.value,
+            username: this.state.formControls.username.value,
+            password: this.state.formControls.password.value
+        };
+
+        console.log(account);
+        this.updateAccount(account);
+    }
+
+    render() {
+        return (
+            <div>
+                <FormGroup id='id'>
+                    <Label for='idField'> Id: </Label>
+                    <Input name='id' id='idField' placeholder={this.state.formControls.id.placeholder}
+                           onChange={this.handleChange}
+                           defaultValue={this.state.formControls.id.value}
+                           touched={this.state.formControls.id.touched? 1 : 0}
+                           valid={this.state.formControls.id.valid}
+                           required
+                    />
+                    {this.state.formControls.name.touched && !this.state.formControls.name.valid &&
+                        <div className={"error-message row"}> * ID must have at least 3 characters </div>}
+                </FormGroup>
+                <FormGroup id='name'>
+                    <Label for='nameField'> Name: </Label>
+                    <Input name='name' id='nameField' placeholder={this.state.formControls.name.placeholder}
+                           onChange={this.handleChange}
+                           defaultValue={this.state.formControls.name.value}
+                           touched={this.state.formControls.name.touched? 1 : 0}
+                           valid={this.state.formControls.name.valid}
+                           required
+                    />
+                    {this.state.formControls.name.touched && !this.state.formControls.name.valid &&
+                        <div className={"error-message row"}> * Name must have at least 3 characters </div>}
+                </FormGroup>
+                <FormGroup id='role'>
+                    <Label for='roleField'> Role: </Label>
+                    <Input name='role' id='roleField' placeholder={this.state.formControls.role.placeholder}
+                           onChange={this.handleChange}
+                           defaultValue={this.state.formControls.role.value}
+                           touched={this.state.formControls.role.touched? 1 : 0}
+                           valid={this.state.formControls.role.valid}
+                           type='select'
+                           required>
+                        <option>user</option>
+                        <option>admin</option>
+                    </Input>
+                </FormGroup>
+                <FormGroup id='username'>
+                    <Label for='usernameField'> Username: </Label>
+                    <Input name='username' id='usernameField' placeholder={this.state.formControls.username.placeholder}
+                           onChange={this.handleChange}
+                           defaultValue={this.state.formControls.username.value}
+                           touched={this.state.formControls.username.touched? 1 : 0}
+                           valid={this.state.formControls.username.valid}
+                           required
+                    />
+                    {this.state.formControls.username.touched && !this.state.formControls.username.valid &&
+                        <div className={"error-message"}> * Email must have a valid format</div>}
+                </FormGroup>
+
+                <FormGroup id='password'>
+                    <Label for='passwordField'> Password: </Label>
+                    <Input name='password' id='passwordField' placeholder={this.state.formControls.password.placeholder}
+                           type={"password"}
+                           onChange={this.handleChange}
+                           defaultValue={this.state.formControls.password.value}
+                           touched={this.state.formControls.password.touched? 1 : 0}
+                           valid={this.state.formControls.password.valid}
+                           required
+                    />
+                </FormGroup>
+
+                <Row>
+                    <Col sm={{size: '4', offset: 8}}>
+                        <Button type={"submit"} disabled={!this.state.formIsValid} onClick={this.handleSubmit}>  Submit </Button>
+                    </Col>
+                </Row>
+
+                {
+                    this.state.errorStatus > 0 &&
+                    <APIResponseErrorMessage errorStatus={this.state.errorStatus} error={this.state.error}/>
+                }
+            </div>
+        ) ;
+    }
+}
+
+class AccountDeleteForm extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.toggleForm = this.toggleForm.bind(this);
+        this.reloadHandler = this.props.reloadHandler;
+
+        this.state = {
+
+            errorStatus: 0,
+            error: null,
+
+            formIsValid: false,
+
+            formControls: {
+                id: {
+                    value: '',
+                    placeholder: 'Id...',
+                    valid: false,
+                    touched: false,
+                    validationRules: {
+                        minLength: 3,
+                        isRequired: true
+                    }
+                },
+
+            }
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    toggleForm() {
+        this.setState({collapseForm: !this.state.collapseForm});
+    }
+
+
+    handleChange = event => {
+
+        const name = event.target.name;
+        const value = event.target.value;
+
+        const updatedControls = this.state.formControls;
+
+        const updatedFormElement = updatedControls[name];
+
+        updatedFormElement.value = value;
+        updatedFormElement.touched = true;
+        updatedFormElement.valid = validate(value, updatedFormElement.validationRules);
+        updatedControls[name] = updatedFormElement;
+
+        let formIsValid = true;
+        for (let updatedFormElementName in updatedControls) {
+            formIsValid = updatedControls[updatedFormElementName].valid && formIsValid;
+        }
+
+        this.setState({
+            formControls: updatedControls,
+            formIsValid: formIsValid
+        });
+
+    };
+
+    deleteAccount(account) {
+        return API_USERS.deleteAccount(account, (result, status, error) => {
+            if (result !== null && (status === 200 || status === 201)) {
+                console.log("Successfully deleted account with id: " + result);
+                this.reloadHandler();
+            } else {
+                this.setState(({
+                    errorStatus: status,
+                    error: error
+                }));
+            }
+        });
+    }
+
+    handleSubmit() {
+        let account = {
+            id: this.state.formControls.id.value,
+        };
+
+        console.log(account);
+        this.deleteAccount(account);
+    }
+
+    render() {
+        return (
+            <div>
+
+                <FormGroup id='id'>
+                    <Label for='idField'> Id: </Label>
+                    <Input name='id' id='idField' placeholder={this.state.formControls.id.placeholder}
+                           onChange={this.handleChange}
+                           defaultValue={this.state.formControls.id.value}
+                           touched={this.state.formControls.id.touched? 1 : 0}
+                           valid={this.state.formControls.id.valid}
+                           required
+                    />
+                    {this.state.formControls.id.touched && !this.state.formControls.id.valid &&
+                        <div className={"error-message row"}> * Id must have at least 3 characters </div>}
+                </FormGroup>
+
+
+
+
+
+                <Row>
+                    <Col sm={{size: '4', offset: 8}}>
+                        <Button type={"submit"} disabled={!this.state.formIsValid} onClick={this.handleSubmit}>  Submit </Button>
+                    </Col>
+                </Row>
+
+                {
+                    this.state.errorStatus > 0 &&
+                    <APIResponseErrorMessage errorStatus={this.state.errorStatus} error={this.state.error}/>
+                }
+            </div>
+        ) ;
+    }
+}
+
+
+class AccountAddDeviceForm extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.toggleForm = this.toggleForm.bind(this);
+        this.reloadHandler = this.props.reloadHandler;
+
+        this.state = {
+
+            errorStatus: 0,
+            error: null,
+
+            formIsValid: false,
+
+            formControls: {
+                id: {
+                    value: '',
+                    placeholder: 'Account Id...',
+                    valid: false,
+                    touched: false,
+                    validationRules: {
+                        minLength: 3,
+                        isRequired: true
+                    }
+                },
+                deviceId: {
+                    value: '',
+                    placeholder: 'Device Id...',
+                    valid: false,
+                    touched: false,
+                    validationRules: {
+                        minLength: 3,
+                        isRequired: true
+                    }
+                }
+            }
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    toggleForm() {
+        this.setState({collapseForm: !this.state.collapseForm});
+    }
+
+
+    handleChange = event => {
+
+        const name = event.target.name;
+        const value = event.target.value;
+
+        const updatedControls = this.state.formControls;
+
+        const updatedFormElement = updatedControls[name];
+
+        updatedFormElement.value = value;
+        updatedFormElement.touched = true;
+        updatedFormElement.valid = validate(value, updatedFormElement.validationRules);
+        updatedControls[name] = updatedFormElement;
+
+        let formIsValid = true;
+        for (let updatedFormElementName in updatedControls) {
+            formIsValid = updatedControls[updatedFormElementName].valid && formIsValid;
+        }
+
+        this.setState({
+            formControls: updatedControls,
+            formIsValid: formIsValid
+        });
+
+    };
+
+    addDeviceToAccount(account) {
+        return API_USERS.addDeviceToAccount(account, (result, status, error) => {
+            if (result !== null && (status === 200 || status === 201)) {
+                console.log("Successfully inserted account with id: " + result);
+                this.reloadHandler();
+            } else {
+                this.setState(({
+                    errorStatus: status,
+                    error: error
+                }));
+            }
+        });
+    }
+
+    handleSubmit() {
+        let account = {
+            id: this.state.formControls.id.value,
+            deviceId: this.state.formControls.deviceId.value,
+        };
+
+        console.log(account);
+        this.addDeviceToAccount(account);
+    }
+
+    render() {
+        return (
+            <div>
+                <FormGroup id='id'>
+                    <Label for='idField'> Account Id: </Label>
+                    <Input name='id' id='idField' placeholder={this.state.formControls.id.placeholder}
+                           onChange={this.handleChange}
+                           defaultValue={this.state.formControls.id.value}
+                           touched={this.state.formControls.id.touched? 1 : 0}
+                           valid={this.state.formControls.id.valid}
+                           required
+                    />
+                </FormGroup>
+                <FormGroup id='deviceId'>
+                    <Label for='deviceIdField'> Device Id: </Label>
+                    <Input name='deviceId' id='deviceIdField' placeholder={this.state.formControls.deviceId.placeholder}
+                           onChange={this.handleChange}
+                           defaultValue={this.state.formControls.deviceId.value}
+                           touched={this.state.formControls.deviceId.touched? 1 : 0}
+                           valid={this.state.formControls.deviceId.valid}
+                           required
+                    />
+                </FormGroup>
+
+                <Row>
+                    <Col sm={{size: '4', offset: 8}}>
+                        <Button type={"submit"} disabled={!this.state.formIsValid} onClick={this.handleSubmit}>  Submit </Button>
+                    </Col>
+                </Row>
+
+                {
+                    this.state.errorStatus > 0 &&
+                    <APIResponseErrorMessage errorStatus={this.state.errorStatus} error={this.state.error}/>
+                }
+            </div>
+        ) ;
+    }
+}
+
+
+export {
+    AccountForm,
+    AccountUpdateForm,
+    AccountDeleteForm,
+    AccountAddDeviceForm
+}

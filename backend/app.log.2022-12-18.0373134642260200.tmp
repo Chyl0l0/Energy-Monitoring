@@ -1,0 +1,260 @@
+2022-12-18 12:06:41.624 DEBUG 23480 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-12-18 12:06:41.674 DEBUG 23480 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2022-12-18 12:06:41.697 DEBUG 23480 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-12-18 12:06:41.705 DEBUG 23480 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-12-18 12:06:42.191  INFO 23480 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-18 12:06:42.192 DEBUG 23480 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-12-18 12:06:42.198 DEBUG 23480 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-12-18 12:06:42.198  INFO 23480 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2022-12-18 12:08:04.920 DEBUG 24140 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-12-18 12:08:04.965 DEBUG 24140 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2022-12-18 12:08:04.988 DEBUG 24140 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-12-18 12:08:04.995 DEBUG 24140 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-12-18 12:08:05.449  INFO 24140 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-18 12:08:05.449 DEBUG 24140 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-12-18 12:08:05.454 DEBUG 24140 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-12-18 12:08:05.454  INFO 24140 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2022-12-18 12:47:04.622 ERROR 1436 --- [pool-1-thread-4] c.r.c.impl.ForgivingExceptionHandler     : Consumer com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2@7b993752 (amq.ctag-Q5WDkC3LcUr7d3exh7Uplg) method handleDelivery for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1) threw an exception for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+
+org.json.JSONException: JSONObject["measurement_value"] not found.
+	at org.json.JSONObject.get(JSONObject.java:570) ~[json-20220924.jar:na]
+	at org.json.JSONObject.getFloat(JSONObject.java:698) ~[json-20220924.jar:na]
+	at ro.tuc.ds2020.apps.Consumer.lambda$new$0(Consumer.java:41) ~[classes/:na]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:588) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:111) ~[amqp-client-5.16.0.jar:5.16.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 12:47:04.626 ERROR 1436 --- [pool-1-thread-4] c.r.c.impl.ForgivingExceptionHandler     : Consumer com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2@7b993752 (amq.ctag-Q5WDkC3LcUr7d3exh7Uplg) method handleDelivery for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1) threw an exception for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+
+java.lang.NullPointerException: Cannot invoke "ro.tuc.ds2020.repositories.DeviceRepository.findById(Object)" because "this.deviceRepository" is null
+	at ro.tuc.ds2020.apps.Consumer.lambda$new$0(Consumer.java:43) ~[classes/:na]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:588) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:111) ~[amqp-client-5.16.0.jar:5.16.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 12:47:04.626 ERROR 1436 --- [pool-1-thread-4] c.r.c.impl.ForgivingExceptionHandler     : Consumer com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2@7b993752 (amq.ctag-Q5WDkC3LcUr7d3exh7Uplg) method handleDelivery for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1) threw an exception for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+
+java.lang.NullPointerException: Cannot invoke "ro.tuc.ds2020.repositories.DeviceRepository.findById(Object)" because "this.deviceRepository" is null
+	at ro.tuc.ds2020.apps.Consumer.lambda$new$0(Consumer.java:43) ~[classes/:na]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:588) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:111) ~[amqp-client-5.16.0.jar:5.16.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 12:47:04.627 ERROR 1436 --- [pool-1-thread-4] c.r.c.impl.ForgivingExceptionHandler     : Consumer com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2@7b993752 (amq.ctag-Q5WDkC3LcUr7d3exh7Uplg) method handleDelivery for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1) threw an exception for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+
+java.lang.NullPointerException: Cannot invoke "ro.tuc.ds2020.repositories.DeviceRepository.findById(Object)" because "this.deviceRepository" is null
+	at ro.tuc.ds2020.apps.Consumer.lambda$new$0(Consumer.java:43) ~[classes/:na]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:588) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:111) ~[amqp-client-5.16.0.jar:5.16.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 12:47:04.628 ERROR 1436 --- [pool-1-thread-4] c.r.c.impl.ForgivingExceptionHandler     : Consumer com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2@7b993752 (amq.ctag-Q5WDkC3LcUr7d3exh7Uplg) method handleDelivery for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1) threw an exception for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+
+java.lang.NullPointerException: Cannot invoke "ro.tuc.ds2020.repositories.DeviceRepository.findById(Object)" because "this.deviceRepository" is null
+	at ro.tuc.ds2020.apps.Consumer.lambda$new$0(Consumer.java:43) ~[classes/:na]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:588) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:111) ~[amqp-client-5.16.0.jar:5.16.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 12:47:04.628 ERROR 1436 --- [pool-1-thread-5] c.r.c.impl.ForgivingExceptionHandler     : Consumer com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2@7b993752 (amq.ctag-Q5WDkC3LcUr7d3exh7Uplg) method handleDelivery for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1) threw an exception for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+
+java.lang.NullPointerException: Cannot invoke "ro.tuc.ds2020.repositories.DeviceRepository.findById(Object)" because "this.deviceRepository" is null
+	at ro.tuc.ds2020.apps.Consumer.lambda$new$0(Consumer.java:43) ~[classes/:na]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:588) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:111) ~[amqp-client-5.16.0.jar:5.16.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 12:47:04.629 ERROR 1436 --- [pool-1-thread-5] c.r.c.impl.ForgivingExceptionHandler     : Consumer com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2@7b993752 (amq.ctag-Q5WDkC3LcUr7d3exh7Uplg) method handleDelivery for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1) threw an exception for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+
+java.lang.NullPointerException: Cannot invoke "ro.tuc.ds2020.repositories.DeviceRepository.findById(Object)" because "this.deviceRepository" is null
+	at ro.tuc.ds2020.apps.Consumer.lambda$new$0(Consumer.java:43) ~[classes/:na]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:588) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:111) ~[amqp-client-5.16.0.jar:5.16.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 12:47:04.629 ERROR 1436 --- [pool-1-thread-5] c.r.c.impl.ForgivingExceptionHandler     : Consumer com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2@7b993752 (amq.ctag-Q5WDkC3LcUr7d3exh7Uplg) method handleDelivery for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1) threw an exception for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+
+java.lang.NullPointerException: Cannot invoke "ro.tuc.ds2020.repositories.DeviceRepository.findById(Object)" because "this.deviceRepository" is null
+	at ro.tuc.ds2020.apps.Consumer.lambda$new$0(Consumer.java:43) ~[classes/:na]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:588) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:111) ~[amqp-client-5.16.0.jar:5.16.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 12:47:04.629 ERROR 1436 --- [pool-1-thread-5] c.r.c.impl.ForgivingExceptionHandler     : Consumer com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2@7b993752 (amq.ctag-Q5WDkC3LcUr7d3exh7Uplg) method handleDelivery for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1) threw an exception for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+
+java.lang.NullPointerException: Cannot invoke "ro.tuc.ds2020.repositories.DeviceRepository.findById(Object)" because "this.deviceRepository" is null
+	at ro.tuc.ds2020.apps.Consumer.lambda$new$0(Consumer.java:43) ~[classes/:na]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:588) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:111) ~[amqp-client-5.16.0.jar:5.16.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 12:47:04.630 ERROR 1436 --- [pool-1-thread-5] c.r.c.impl.ForgivingExceptionHandler     : Consumer com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2@7b993752 (amq.ctag-Q5WDkC3LcUr7d3exh7Uplg) method handleDelivery for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1) threw an exception for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+
+java.lang.NullPointerException: Cannot invoke "ro.tuc.ds2020.repositories.DeviceRepository.findById(Object)" because "this.deviceRepository" is null
+	at ro.tuc.ds2020.apps.Consumer.lambda$new$0(Consumer.java:43) ~[classes/:na]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:588) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:111) ~[amqp-client-5.16.0.jar:5.16.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 12:47:04.630 ERROR 1436 --- [pool-1-thread-5] c.r.c.impl.ForgivingExceptionHandler     : Consumer com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2@7b993752 (amq.ctag-Q5WDkC3LcUr7d3exh7Uplg) method handleDelivery for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1) threw an exception for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+
+java.lang.NullPointerException: Cannot invoke "ro.tuc.ds2020.repositories.DeviceRepository.findById(Object)" because "this.deviceRepository" is null
+	at ro.tuc.ds2020.apps.Consumer.lambda$new$0(Consumer.java:43) ~[classes/:na]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:588) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:111) ~[amqp-client-5.16.0.jar:5.16.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 12:47:04.630 ERROR 1436 --- [pool-1-thread-5] c.r.c.impl.ForgivingExceptionHandler     : Consumer com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2@7b993752 (amq.ctag-Q5WDkC3LcUr7d3exh7Uplg) method handleDelivery for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1) threw an exception for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+
+java.lang.NullPointerException: Cannot invoke "ro.tuc.ds2020.repositories.DeviceRepository.findById(Object)" because "this.deviceRepository" is null
+	at ro.tuc.ds2020.apps.Consumer.lambda$new$0(Consumer.java:43) ~[classes/:na]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:588) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:111) ~[amqp-client-5.16.0.jar:5.16.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 12:47:04.630 ERROR 1436 --- [pool-1-thread-5] c.r.c.impl.ForgivingExceptionHandler     : Consumer com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2@7b993752 (amq.ctag-Q5WDkC3LcUr7d3exh7Uplg) method handleDelivery for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1) threw an exception for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+
+java.lang.NullPointerException: Cannot invoke "ro.tuc.ds2020.repositories.DeviceRepository.findById(Object)" because "this.deviceRepository" is null
+	at ro.tuc.ds2020.apps.Consumer.lambda$new$0(Consumer.java:43) ~[classes/:na]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:588) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:111) ~[amqp-client-5.16.0.jar:5.16.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 12:47:04.631 ERROR 1436 --- [pool-1-thread-5] c.r.c.impl.ForgivingExceptionHandler     : Consumer com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2@7b993752 (amq.ctag-Q5WDkC3LcUr7d3exh7Uplg) method handleDelivery for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1) threw an exception for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+
+java.lang.NullPointerException: Cannot invoke "ro.tuc.ds2020.repositories.DeviceRepository.findById(Object)" because "this.deviceRepository" is null
+	at ro.tuc.ds2020.apps.Consumer.lambda$new$0(Consumer.java:43) ~[classes/:na]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:588) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:111) ~[amqp-client-5.16.0.jar:5.16.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 12:47:04.631 ERROR 1436 --- [pool-1-thread-5] c.r.c.impl.ForgivingExceptionHandler     : Consumer com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2@7b993752 (amq.ctag-Q5WDkC3LcUr7d3exh7Uplg) method handleDelivery for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1) threw an exception for channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+
+java.lang.NullPointerException: Cannot invoke "ro.tuc.ds2020.repositories.DeviceRepository.findById(Object)" because "this.deviceRepository" is null
+	at ro.tuc.ds2020.apps.Consumer.lambda$new$0(Consumer.java:43) ~[classes/:na]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:588) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.16.0.jar:5.16.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:111) ~[amqp-client-5.16.0.jar:5.16.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 12:47:05.517 DEBUG 1436 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-12-18 12:47:05.556 DEBUG 1436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2022-12-18 12:47:05.581 DEBUG 1436 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-12-18 12:47:05.588 DEBUG 1436 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-12-18 12:47:05.996  INFO 1436 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-18 12:47:05.996 DEBUG 1436 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-12-18 12:47:06.002 DEBUG 1436 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-12-18 12:47:06.002  INFO 1436 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2022-12-18 12:48:52.537 DEBUG 1880 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-12-18 12:48:52.576 DEBUG 1880 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2022-12-18 12:48:52.598 DEBUG 1880 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-12-18 12:48:52.605 DEBUG 1880 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-12-18 12:48:53.050  INFO 1880 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-18 12:48:53.050 DEBUG 1880 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-12-18 12:48:53.056 DEBUG 1880 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-12-18 12:48:53.056  INFO 1880 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2022-12-18 13:08:25.315 DEBUG 10660 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-12-18 13:08:25.354 DEBUG 10660 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2022-12-18 13:08:25.379 DEBUG 10660 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-12-18 13:08:25.387 DEBUG 10660 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-12-18 13:08:25.810  INFO 10660 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-18 13:08:25.810 DEBUG 10660 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-12-18 13:08:25.816 DEBUG 10660 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-12-18 13:08:25.817  INFO 10660 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2022-12-18 13:08:45.522 DEBUG 10660 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/account/user/pass", parameters={}
+2022-12-18 13:08:45.526 DEBUG 10660 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ro.tuc.ds2020.controllers.AccountController#addDevice(String, String)
+2022-12-18 13:08:45.646 DEBUG 10660 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-18 13:08:45.646 DEBUG 10660 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ro.tuc.ds2020.dtos.AccountDetailsDTO@905285ad]
+2022-12-18 13:08:45.655 DEBUG 10660 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2022-12-18 13:08:45.789 DEBUG 10660 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/account/03bbb7b8-3c08-43c4-a692-3c5acdd5ff65/devices", parameters={}
+2022-12-18 13:08:45.791 DEBUG 10660 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ro.tuc.ds2020.controllers.AccountController#getDevices(UUID)
+2022-12-18 13:08:45.830 DEBUG 10660 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-18 13:08:45.830 DEBUG 10660 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[links: [<http://localhost:8080/account/5c538877-dc37-4771-a73f-465411e63497>;rel="accountDetails"]]]
+2022-12-18 13:08:45.836 DEBUG 10660 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-18 13:13:51.522 DEBUG 24444 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-12-18 13:13:51.563 DEBUG 24444 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2022-12-18 13:13:51.586 DEBUG 24444 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-12-18 13:13:51.593 DEBUG 24444 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-12-18 13:13:52.051  INFO 24444 --- [RMI TCP Connection(3)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-18 13:13:52.051 DEBUG 24444 --- [RMI TCP Connection(3)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-12-18 13:13:52.057 DEBUG 24444 --- [RMI TCP Connection(3)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-12-18 13:13:52.057  INFO 24444 --- [RMI TCP Connection(3)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2022-12-18 13:14:16.056 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/device/5c538877-dc37-4771-a73f-465411e63497/energy", parameters={}
+2022-12-18 13:14:16.059 DEBUG 24444 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ro.tuc.ds2020.controllers.DeviceController#getEnergy(UUID)
+2022-12-18 13:14:16.107 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-18 13:14:16.108 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[links: [<http://localhost:8080/device/047b641d-42ca-4e62-9df7-405045b1dd32>;rel="deviceDetails"]]]
+2022-12-18 13:14:16.121 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-18 13:14:52.332 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/device/5c538877-dc37-4771-a73f-465411e63497/energy", parameters={}
+2022-12-18 13:14:52.332 DEBUG 24444 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ro.tuc.ds2020.controllers.DeviceController#getEnergy(UUID)
+2022-12-18 13:14:52.337 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-18 13:14:52.338 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[links: [<http://localhost:8080/device/047b641d-42ca-4e62-9df7-405045b1dd32>;rel="deviceDetails"], l (truncated)...]
+2022-12-18 13:14:52.338 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-18 13:16:02.380 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/account/03bbb7b8-3c08-43c4-a692-3c5acdd5ff65/devices", parameters={}
+2022-12-18 13:16:02.382 DEBUG 24444 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ro.tuc.ds2020.controllers.AccountController#getDevices(UUID)
+2022-12-18 13:16:02.397 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-18 13:16:02.397 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[links: [<http://localhost:8080/account/5c538877-dc37-4771-a73f-465411e63497>;rel="accountDetails"]]]
+2022-12-18 13:16:02.399 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-18 13:16:06.639 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/device/5c538877-dc37-4771-a73f-465411e63497/energy", parameters={}
+2022-12-18 13:16:06.640 DEBUG 24444 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ro.tuc.ds2020.controllers.DeviceController#getEnergy(UUID)
+2022-12-18 13:16:06.645 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-18 13:16:06.645 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[links: [<http://localhost:8080/device/047b641d-42ca-4e62-9df7-405045b1dd32>;rel="deviceDetails"], l (truncated)...]
+2022-12-18 13:16:06.646 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-18 13:17:47.964 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/account/03bbb7b8-3c08-43c4-a692-3c5acdd5ff65/devices", parameters={}
+2022-12-18 13:17:47.964 DEBUG 24444 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ro.tuc.ds2020.controllers.AccountController#getDevices(UUID)
+2022-12-18 13:17:47.971 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-18 13:17:47.972 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[links: [<http://localhost:8080/account/5c538877-dc37-4771-a73f-465411e63497>;rel="accountDetails"]]]
+2022-12-18 13:17:47.972 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-18 13:17:53.600 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/device/5c538877-dc37-4771-a73f-465411e63497/energy", parameters={}
+2022-12-18 13:17:53.601 DEBUG 24444 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ro.tuc.ds2020.controllers.DeviceController#getEnergy(UUID)
+2022-12-18 13:17:53.606 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-18 13:17:53.606 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[links: [<http://localhost:8080/device/047b641d-42ca-4e62-9df7-405045b1dd32>;rel="deviceDetails"], l (truncated)...]
+2022-12-18 13:17:53.609 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-18 13:29:34.057 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/device/5c538877-dc37-4771-a73f-465411e63497/energy", parameters={}
+2022-12-18 13:29:34.058 DEBUG 24444 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ro.tuc.ds2020.controllers.DeviceController#getEnergy(UUID)
+2022-12-18 13:29:34.065 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-18 13:29:34.065 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[links: [<http://localhost:8080/device/047b641d-42ca-4e62-9df7-405045b1dd32>;rel="deviceDetails"], l (truncated)...]
+2022-12-18 13:29:34.068 DEBUG 24444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

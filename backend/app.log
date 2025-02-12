@@ -1,0 +1,263 @@
+2022-12-22 00:01:14.059 DEBUG 10968 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/websocket/**] in 'stompWebSocketHandlerMapping'
+2022-12-22 00:01:14.121 DEBUG 10968 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.a.NotificationController:
+	
+2022-12-22 00:01:14.122 DEBUG 10968 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.AccountController:
+	
+2022-12-22 00:01:14.122 DEBUG 10968 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.DeviceController:
+	
+2022-12-22 00:01:14.122 DEBUG 10968 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.EnergyConsumptionController:
+	
+2022-12-22 00:01:14.122 DEBUG 10968 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.IndexController:
+	
+2022-12-22 00:01:14.124 DEBUG 10968 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	
+2022-12-22 00:01:14.230 DEBUG 10968 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-12-22 00:01:14.277 DEBUG 10968 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2022-12-22 00:01:14.464 DEBUG 10968 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-12-22 00:01:14.474 DEBUG 10968 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-12-22 00:01:14.782 DEBUG 10968 --- [main] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-12-22 00:01:14.782 DEBUG 10968 --- [main] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-12-22 00:01:14.782  INFO 10968 --- [main] org.springframework.web.SimpLogging      : Starting...
+2022-12-22 00:01:14.783 DEBUG 10968 --- [main] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:01:14.783 DEBUG 10968 --- [main] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:01:14.783  INFO 10968 --- [main] org.springframework.web.SimpLogging      : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2022-12-22 00:01:14.783  INFO 10968 --- [main] org.springframework.web.SimpLogging      : Started.
+2022-12-22 00:01:14.783 DEBUG 10968 --- [main] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:01:14.783 DEBUG 10968 --- [main] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:01:15.111  INFO 10968 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-22 00:01:15.111 DEBUG 10968 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-12-22 00:01:15.119 DEBUG 10968 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-12-22 00:01:15.119  INFO 10968 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2022-12-22 00:01:21.936 DEBUG 10968 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientOutboundChannel removed SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-12-22 00:01:21.936 DEBUG 10968 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-12-22 00:01:21.936  INFO 10968 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : Stopping...
+2022-12-22 00:01:21.936  INFO 10968 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2022-12-22 00:01:21.937 DEBUG 10968 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:01:21.937 DEBUG 10968 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:01:21.937  INFO 10968 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : Stopped.
+2022-12-22 00:01:21.937 DEBUG 10968 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:01:21.937 DEBUG 10968 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:09:37.142 DEBUG 26724 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/websocket/**] in 'stompWebSocketHandlerMapping'
+2022-12-22 00:09:37.200 DEBUG 26724 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.a.NotificationController:
+	
+2022-12-22 00:09:37.200 DEBUG 26724 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.AccountController:
+	
+2022-12-22 00:09:37.201 DEBUG 26724 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.DeviceController:
+	
+2022-12-22 00:09:37.201 DEBUG 26724 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.EnergyConsumptionController:
+	
+2022-12-22 00:09:37.201 DEBUG 26724 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.IndexController:
+	
+2022-12-22 00:09:37.202 DEBUG 26724 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	
+2022-12-22 00:09:37.299 DEBUG 26724 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-12-22 00:09:37.346 DEBUG 26724 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2022-12-22 00:09:37.526 DEBUG 26724 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-12-22 00:09:37.535 DEBUG 26724 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-12-22 00:09:37.847 DEBUG 26724 --- [main] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-12-22 00:09:37.848 DEBUG 26724 --- [main] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-12-22 00:09:37.848  INFO 26724 --- [main] org.springframework.web.SimpLogging      : Starting...
+2022-12-22 00:09:37.848 DEBUG 26724 --- [main] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:09:37.848 DEBUG 26724 --- [main] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:09:37.848  INFO 26724 --- [main] org.springframework.web.SimpLogging      : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2022-12-22 00:09:37.848  INFO 26724 --- [main] org.springframework.web.SimpLogging      : Started.
+2022-12-22 00:09:37.848 DEBUG 26724 --- [main] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:09:37.848 DEBUG 26724 --- [main] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:09:38.137  INFO 26724 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-22 00:09:38.137 DEBUG 26724 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-12-22 00:09:38.144 DEBUG 26724 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-12-22 00:09:38.144  INFO 26724 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2022-12-22 00:09:41.087 DEBUG 26724 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientOutboundChannel removed SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-12-22 00:09:41.087 DEBUG 26724 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-12-22 00:09:41.088  INFO 26724 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : Stopping...
+2022-12-22 00:09:41.088  INFO 26724 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2022-12-22 00:09:41.088 DEBUG 26724 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:09:41.088 DEBUG 26724 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:09:41.088  INFO 26724 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : Stopped.
+2022-12-22 00:09:41.088 DEBUG 26724 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:09:41.088 DEBUG 26724 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:10:14.042 DEBUG 24356 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/websocket/**] in 'stompWebSocketHandlerMapping'
+2022-12-22 00:10:14.101 DEBUG 24356 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.a.NotificationController:
+	
+2022-12-22 00:10:14.101 DEBUG 24356 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.AccountController:
+	
+2022-12-22 00:10:14.101 DEBUG 24356 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.DeviceController:
+	
+2022-12-22 00:10:14.101 DEBUG 24356 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.EnergyConsumptionController:
+	
+2022-12-22 00:10:14.101 DEBUG 24356 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.IndexController:
+	
+2022-12-22 00:10:14.102 DEBUG 24356 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	
+2022-12-22 00:10:14.202 DEBUG 24356 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-12-22 00:10:14.248 DEBUG 24356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2022-12-22 00:10:14.520 DEBUG 24356 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-12-22 00:10:14.529 DEBUG 24356 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-12-22 00:10:14.846 DEBUG 24356 --- [main] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-12-22 00:10:14.847 DEBUG 24356 --- [main] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-12-22 00:10:14.847  INFO 24356 --- [main] org.springframework.web.SimpLogging      : Starting...
+2022-12-22 00:10:14.847 DEBUG 24356 --- [main] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:10:14.847 DEBUG 24356 --- [main] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:10:14.847  INFO 24356 --- [main] org.springframework.web.SimpLogging      : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2022-12-22 00:10:14.847  INFO 24356 --- [main] org.springframework.web.SimpLogging      : Started.
+2022-12-22 00:10:14.847 DEBUG 24356 --- [main] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:10:14.847 DEBUG 24356 --- [main] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:10:15.064  INFO 24356 --- [RMI TCP Connection(3)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-22 00:10:15.064 DEBUG 24356 --- [RMI TCP Connection(3)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-12-22 00:10:15.071 DEBUG 24356 --- [RMI TCP Connection(3)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-12-22 00:10:15.072  INFO 24356 --- [RMI TCP Connection(3)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2022-12-22 00:11:14.054  INFO 24356 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2022-12-22 00:14:48.946 DEBUG 24356 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientOutboundChannel removed SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-12-22 00:14:48.947 DEBUG 24356 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-12-22 00:14:48.947  INFO 24356 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : Stopping...
+2022-12-22 00:14:48.947  INFO 24356 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2022-12-22 00:14:48.947 DEBUG 24356 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:14:48.947 DEBUG 24356 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:14:48.947  INFO 24356 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : Stopped.
+2022-12-22 00:14:48.947 DEBUG 24356 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:14:48.947 DEBUG 24356 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:14:54.329 DEBUG 16676 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/websocket/**] in 'stompWebSocketHandlerMapping'
+2022-12-22 00:14:54.386 DEBUG 16676 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.a.NotificationController:
+	
+2022-12-22 00:14:54.386 DEBUG 16676 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.AccountController:
+	
+2022-12-22 00:14:54.386 DEBUG 16676 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.DeviceController:
+	
+2022-12-22 00:14:54.386 DEBUG 16676 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.EnergyConsumptionController:
+	
+2022-12-22 00:14:54.386 DEBUG 16676 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.IndexController:
+	
+2022-12-22 00:14:54.387 DEBUG 16676 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	
+2022-12-22 00:14:54.487 DEBUG 16676 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-12-22 00:14:54.531 DEBUG 16676 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2022-12-22 00:14:54.710 DEBUG 16676 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-12-22 00:14:54.719 DEBUG 16676 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-12-22 00:14:55.028 DEBUG 16676 --- [main] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-12-22 00:14:55.029 DEBUG 16676 --- [main] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-12-22 00:14:55.029  INFO 16676 --- [main] org.springframework.web.SimpLogging      : Starting...
+2022-12-22 00:14:55.029 DEBUG 16676 --- [main] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:14:55.029 DEBUG 16676 --- [main] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:14:55.029  INFO 16676 --- [main] org.springframework.web.SimpLogging      : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2022-12-22 00:14:55.029  INFO 16676 --- [main] org.springframework.web.SimpLogging      : Started.
+2022-12-22 00:14:55.029 DEBUG 16676 --- [main] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:14:55.029 DEBUG 16676 --- [main] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:14:55.349  INFO 16676 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-22 00:14:55.350 DEBUG 16676 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-12-22 00:14:55.357 DEBUG 16676 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-12-22 00:14:55.357  INFO 16676 --- [RMI TCP Connection(1)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2022-12-22 00:15:10.544 DEBUG 16676 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientOutboundChannel removed SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-12-22 00:15:10.544 DEBUG 16676 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-12-22 00:15:10.544  INFO 16676 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : Stopping...
+2022-12-22 00:15:10.544  INFO 16676 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2022-12-22 00:15:10.544 DEBUG 16676 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:15:10.544 DEBUG 16676 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:15:10.544  INFO 16676 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : Stopped.
+2022-12-22 00:15:10.545 DEBUG 16676 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:15:10.545 DEBUG 16676 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:15:14.939 DEBUG 19580 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/websocket/**] in 'stompWebSocketHandlerMapping'
+2022-12-22 00:15:14.995 DEBUG 19580 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.a.NotificationController:
+	
+2022-12-22 00:15:14.996 DEBUG 19580 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.AccountController:
+	
+2022-12-22 00:15:14.996 DEBUG 19580 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.DeviceController:
+	
+2022-12-22 00:15:14.996 DEBUG 19580 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.EnergyConsumptionController:
+	
+2022-12-22 00:15:14.996 DEBUG 19580 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.IndexController:
+	
+2022-12-22 00:15:14.997 DEBUG 19580 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	
+2022-12-22 00:15:15.096 DEBUG 19580 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-12-22 00:15:15.139 DEBUG 19580 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2022-12-22 00:15:15.404 DEBUG 19580 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-12-22 00:15:15.413 DEBUG 19580 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-12-22 00:15:15.718 DEBUG 19580 --- [main] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-12-22 00:15:15.719 DEBUG 19580 --- [main] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-12-22 00:15:15.719  INFO 19580 --- [main] org.springframework.web.SimpLogging      : Starting...
+2022-12-22 00:15:15.719 DEBUG 19580 --- [main] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:15:15.719 DEBUG 19580 --- [main] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:15:15.719  INFO 19580 --- [main] org.springframework.web.SimpLogging      : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2022-12-22 00:15:15.719  INFO 19580 --- [main] org.springframework.web.SimpLogging      : Started.
+2022-12-22 00:15:15.719 DEBUG 19580 --- [main] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:15:15.719 DEBUG 19580 --- [main] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:15:16.070  INFO 19580 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-22 00:15:16.070 DEBUG 19580 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-12-22 00:15:16.077 DEBUG 19580 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-12-22 00:15:16.077  INFO 19580 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2022-12-22 00:15:22.007 DEBUG 19580 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientOutboundChannel removed SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2022-12-22 00:15:22.008 DEBUG 19580 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2022-12-22 00:15:22.008  INFO 19580 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : Stopping...
+2022-12-22 00:15:22.008  INFO 19580 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2022-12-22 00:15:22.008 DEBUG 19580 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:15:22.008 DEBUG 19580 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+2022-12-22 00:15:22.008  INFO 19580 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : Stopped.
+2022-12-22 00:15:22.008 DEBUG 19580 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:15:22.008 DEBUG 19580 --- [SpringContextShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2022-12-22 00:21:33.350 DEBUG 19396 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/websocket/**] in 'stompWebSocketHandlerMapping'
+2022-12-22 00:21:33.406 DEBUG 19396 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.a.NotificationController:
+	
+2022-12-22 00:21:33.406 DEBUG 19396 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.AccountController:
+	
+2022-12-22 00:21:33.407 DEBUG 19396 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.DeviceController:
+	
+2022-12-22 00:21:33.407 DEBUG 19396 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.EnergyConsumptionController:
+	
+2022-12-22 00:21:33.407 DEBUG 19396 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	r.t.d.c.IndexController:
+	
+2022-12-22 00:21:33.408 DEBUG 19396 --- [main] .WebSocketAnnotationMethodMessageHandler : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	
+2022-12-22 00:21:33.508 DEBUG 19396 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-12-22 00:21:33.551 DEBUG 19396 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2022-12-22 00:21:33.742 DEBUG 19396 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-12-22 00:21:33.751 DEBUG 19396 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-12-22 00:21:34.085 ERROR 19396 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+

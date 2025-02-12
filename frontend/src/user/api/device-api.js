@@ -1,0 +1,87 @@
+import {HOST} from '../../commons/hosts';
+import RestApiClient from "../../commons/api/rest-client";
+
+
+const endpoint = {
+    account:'/account',
+    device: '/device'
+};
+
+function getDevices(callback) {
+    let request = new Request(HOST.backend_api + endpoint.device, {
+        method: 'GET',
+    });
+    console.log(request.url);
+    RestApiClient.performRequest(request, callback);
+}
+function getDeviceByAccountId(id, callback){
+    console.log(id)
+    let request = new Request(HOST.backend_api + endpoint.account +"/" + id + '/devices', {
+        method: 'GET'
+    });
+
+    console.log(request.url);
+    RestApiClient.performRequest(request, callback);
+}
+function getDeviceById(params, callback){
+    let request = new Request(HOST.backend_api + endpoint.device + params.id, {
+       method: 'GET'
+    });
+
+    console.log(request.url);
+    RestApiClient.performRequest(request, callback);
+}
+function getEnergyById(params, callback){
+    let request = new Request(HOST.backend_api + endpoint.device +"/"+ params + "/energy" , {
+        method: 'GET'
+    });
+    console.log(request.url);
+    RestApiClient.performRequest(request, callback);
+}
+function deleteDevice(params, callback){
+    let request = new Request(HOST.backend_api + endpoint.device + "/" + params.id, {
+        method: 'DELETE'
+    });
+
+    console.log(request.url);
+    RestApiClient.performRequest(request, callback);
+}
+function postDevice(user, callback){
+    let request = new Request(HOST.backend_api + endpoint.device  , {
+        method: 'POST',
+        headers : {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user)
+    });
+
+    console.log("URL: " + request.url);
+
+    RestApiClient.performRequest(request, callback);
+}
+
+function updateDevice(user, callback){
+    let request = new Request(HOST.backend_api + endpoint.device + "/" + user.id , {
+        method: 'PUT',
+        headers : {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user)
+    });
+
+    console.log("URL: " + request.url);
+
+    RestApiClient.performRequest(request, callback);
+}
+
+export {
+    getDevices,
+    getDeviceById,
+    postDevice,
+    deleteDevice,
+    updateDevice,
+    getDeviceByAccountId,
+    getEnergyById
+};
